@@ -1,0 +1,16 @@
+{
+  "name": "landslide",
+  "description": "Visualizing the landslide cases all around the world",
+  "logo": "https://scalingo.com/logo.svg",
+  "repository": "https://github.com/jspark971/hackathon",
+  "env": {
+    "VAR_TEST_1": {
+      "description": "test variable number 1",
+      "value": "1"
+    },
+    "VAR_SECRET_1": {
+      "description": "generated variable 1",
+      "generator": "secret"
+    }
+  }
+}

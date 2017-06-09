@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename = 'style.css') }}">
+  </head>
+  <body>
+    <table id="t01">
+      <tr> <td>Country</td> <td>{country}</td> </tr>
+      <tr> <td>Location</td> <td>{nearest_places}</td> </tr>
+      <tr> <td>date</td> <td>{date}</td></tr>
+      <tr> <td>Landslide type</td> <td>{landslide_type}</td></tr>
+      <tr> <td>Trigger</td> <td>{trigger}</td> </tr>
+      <tr> <td>Fatalities</td> <td>{fatalities}</td> </tr>
+      <tr> <td>Landslide size</td> <td>{landslide_size}</td></tr>
+      <tr> <td>Latitude</td> <td>{latitude}</td></tr>
+      <tr> <td>Longitude</td> <td>{longitude}</td></tr>
+    </table>
+    
+  </body>
+  </html>
