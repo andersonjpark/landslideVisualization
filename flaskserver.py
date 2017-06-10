@@ -65,24 +65,31 @@ for _, row in store_data.iterrows():
   except:
     pass
 
-def shift_map(x,y):
-  try:
-  	bb = [[x - 10, y-10],[x+10,y+10]]
-  except:
-    bb = [[-130,30],[-120,40]]
-  landslide_map.fit_bounds(bb)
-  return landslide_map._repr_html_()
 
 @app.route("/")
 def hello():
-  return landslide_map._repr_html_()
+  return render_template("map_page.html", view_map = landslide_map)
+  #return landslide_map._repr_html_()
 
-@app.route("/<name>")
+@app.route("/location/<name>")
 def sayhi(name):
 	g = geocoder.google(name)
 	x,y = g.lat,g.lng
-
-	return shift_map(x,y)
+        print name, g, g.status
+        # geocoder comes with a built-in bounding box
+        # this is a better solution than always giving a +/ 10 degrees
+        # The BB is a little narrow, so we
+        if g.status == 'OK':
+          landslide_map.fit_bounds( [g.southwest, g.northeast] )
+          return render_template("map_page.html",
+                                 view_map = landslide_map,
+                                 location = name)
+        else:
+          print "Going to the default"
+          return render_template("map_page.html",
+                                 view_map = landslide_map,
+                                 location = 'Not found',
+                                 error    = "Could not locate {}".format(name))
 
 @app.route("/<name>/<location>")
 def sayhiatplace(name, location):
