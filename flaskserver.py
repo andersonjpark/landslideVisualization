@@ -8,7 +8,7 @@ import geocoder
 
 store_data = pd.read_csv("global_landslides.csv")
 landslide_map = folium.Map(tiles="Stamen Terrain", zoom_start = 6)
-store_data = store_data[:1]
+store_data = store_data[:100]
 
 app = Flask(__name__)
 
@@ -75,16 +75,7 @@ def shift_map(x,y):
 
 @app.route("/")
 def hello():
-  #Problem: for some reason it does not make the fun the inin_map()
-  #         which is a function that makes the map with the dots
-  #         This is the reason why when i first run the program, the map is okay
-  #         but when i shift the location, the dots go away
-  #         I currently made the first call work by templating the html file made before
-
-  myhtml = open("my_map.html")
-  return myhtml.read()
-  #replace the code with this after solving the problem.
-  #return landslide_map.__repr_html_()
+  return landslide_map._repr_html_()
 
 @app.route("/<name>")
 def sayhi(name):
