@@ -5,15 +5,17 @@
   </head>
   <body>
     <table id="t01">
-      <tr> <td>Country</td> <td>{{country}}</td> </tr>
-      <tr> <td>Location</td> <td>{{nearest_places}}</td> </tr>
-      <tr> <td>date</td> <td>{{date}}</td></tr>
-      <tr> <td>Landslide type</td> <td>{{landslide_type}}</td></tr>
-      <tr> <td>Trigger</td> <td>{{trigger}}</td> </tr>
-      <tr> <td>Fatalities</td> <td>{{fatalities}}</td> </tr>
-      <tr> <td>Landslide size</td> <td>{{landslide_size}}</td></tr>
-      <tr> <td>Latitude</td> <td>{{latitude}}</td></tr>
-      <tr> <td>Longitude</td> <td>{{longitude}}</td></tr>
+      {% for column in row %}
+      <tr> <td>Country</td> <td>{{column.country|safe}}</td> </tr>
+      <tr> <td>Location</td> <td>{{column.nearest_places|safe}}</td> </tr>
+      <tr> <td>date</td> <td>{{column.date|safe}}</td></tr>
+      <tr> <td>Landslide type</td> <td>{{column.landslide_type|safe}}</td></tr>
+      <tr> <td>Trigger</td> <td>{{column.trigger|safe}}</td> </tr>
+      <tr> <td>Fatalities</td> <td>{{column.fatalities|safe}}</td> </tr>
+      <tr> <td>Landslide size</td> <td>{{column.landslide_size|safe}}</td></tr>
+      <tr> <td>Latitude</td> <td>{{column.latitude|safe}}</td></tr>
+      <tr> <td>Longitude</td> <td>{{column.longitude|safe}}</td></tr>
+      {% endfor %}
     </table>
   </body>
   </html>
