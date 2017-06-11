@@ -15,3 +15,4 @@ Source: https://data.nasa.gov/dataset/Global-Landslide-Catalog-Export/dd9e-wu2v/
 3. Maybe for the origin, save the html file and bring it up
 4. Made a child template, "map_page.html", which is a new way of bringing the map. could be used 
 for relocating the map. (need to think of a create way)
+5. Develop a function that filters the map depending on the search result, making a cluster around the search area so that we don't have to make pop up table for areas that is not in the search area ( use the pandas filter function)
