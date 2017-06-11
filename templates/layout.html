@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename ='mapDesign.css') }}">
+<body>
+
+  <div class="sitename">Landslide maps for {{ location | default('the world') }} </div>
+
+  <div class="error"> {% if error %} {{error}} {% endif %}</div>
+
+  <br>
+
+  <div class="map">
+    {{ view_map._repr_html_() | safe }}
+  </div>
+
+  <div class="controls">
+  	<a href = "{{ url_for('map')}}"> Origin </a>
+  	<!-- Maybe save the original page as html and bring that html up. -->
+  	<br>
+    Enter the place you want to look at: <input type=text name=name>
+    <a href = "{{ url_for('relocate', name = 'name')}}"> Search </a>
+    <!-- Need to find a way to save what i have put inside the searchbar and copy it into the 'name' -->
+  </div>
+  
+</body>
+</html>
