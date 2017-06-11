@@ -12,8 +12,12 @@
   {% block body %}{% endblock %}
 
   <div class="controls">
+  	<a href = "{{ url_for('map')}}"> Origin </a>
+  	<!-- Maybe making this into a button -->
+  	<br>
     Enter the place you want to look at: <input type=text name=location>
-    <a href = "{{ url_for('relocate')}}"> Search </a>
+    <a href = "{{ url_for('relocate')}}"> Search </a> 
+    <!-- I get a error "BuildError: Could not build url for endpoint 'relocate'. Did you forget to specify values ['name']?", i think if i know how to specify the value, this will be fixed.-->
   </div>
   
 </body>
