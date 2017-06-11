@@ -65,14 +65,12 @@ for _, row in store_data.iterrows():
   except:
     pass
 
-
-@app.route("/")
-def hello():
+@app.route("/",)
+def map():
   return render_template("map_page.html", view_map = landslide_map)
-  #return landslide_map._repr_html_()
 
 @app.route("/location/<name>")
-def sayhi(name):
+def relocate(name):
 	g = geocoder.google(name)
 	x,y = g.lat,g.lng
         print name, g, g.status
@@ -93,7 +91,7 @@ def sayhi(name):
 
 @app.route("/<name>/<location>")
 def sayhiatplace(name, location):
-  return render_template('layouts.html', name=name, location=location)
+  return render_template('basic.html', name=name, location=location)
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
