@@ -67,7 +67,7 @@ for _, row in store_data.iterrows():
 
 @app.route("/",)
 def map():
-  return render_template("map_page.html", view_map = landslide_map)
+  return render_template("layout.html", view_map = landslide_map)
 
 @app.route("/location/<name>")
 def relocate(name):
@@ -79,12 +79,12 @@ def relocate(name):
         # The BB is a little narrow, so we
         if g.status == 'OK':
           landslide_map.fit_bounds( [g.southwest, g.northeast] )
-          return render_template("map_page.html",
+          return render_template("layout.html",
                                  view_map = landslide_map,
                                  location = name)
         else:
           print "Going to the default"
-          return render_template("map_page.html",
+          return render_template("layout.html",
                                  view_map = landslide_map,
                                  location = 'Not found',
                                  error    = "Could not locate {}".format(name))
