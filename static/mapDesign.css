@@ -1,0 +1,43 @@
+body{
+    background-color: #f2b368;
+}
+
+.sitename{
+    width: 100%;
+    display: block;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: arial, Georgia, Serif;
+    text-align: center;
+    padding: 10px;
+}
+
+.error{
+    width: 100%;
+    display: block;
+    height: 10px;
+    font-weight: bold;
+    text-align:center;
+    color: red;
+}
+
+.map{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.controls{
+    width: 75%;
+    display: block;
+    padding: 10px;
+    margin: auto;
+    font-size: x-large;
+}
+
+.controls input{
+    height: 1.5 em;
+    width: 20em;
+    
+}
