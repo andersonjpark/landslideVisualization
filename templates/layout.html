@@ -26,7 +26,7 @@
     // We are using Javscript to implement the search redirects, rather
     // than the Jinja templating engine (it can be done with both --
     //      look into forms and HTML)
-    
+
     window.onkeypress = function(e){
       if (!e) e = window.event;
       var keyCode = e.keyCode || e.which;
@@ -35,9 +35,9 @@
         return false;
       }
     }
-    
+
     document.getElementById("performSearch").onclick = doSearch;
-    
+
     function doSearch(){
       var placeName = document.getElementById("inputLocation").value;
       window.location = "/location/" + encodeURIComponent(placeName);
