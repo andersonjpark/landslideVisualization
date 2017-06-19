@@ -1,16 +1,16 @@
-table{ 
+table{
 	width: 100%;
 	border: 1px solid black;
-	border-collapse: collapse; 
+	border-collapse: collapse;
 }
 
 th, td{
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding: 5px;
-	text-align: left; 
+	text-align: left;
 }
 
-table#t01 tr:nth-child(odd) { background-color: #8e8; }
+table tr:nth-child(odd) { background-color: #8e8; }
 
-table#t01 tr:nth-child(even){ background-color: #fff; }
+table tr:nth-child(even){ background-color: #fff; }

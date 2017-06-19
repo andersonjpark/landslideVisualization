@@ -1,11 +1,30 @@
 <!DOCTYPE html>
   <html>
   <head>
-  <link rel=stylesheet type=text/css href="{{ url_for('static', filename = 'popUpDesign.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'popUpDesign.css') }}">
+
+  <style>
+  table{
+  	width: 100%;
+  	border: 1px solid black;
+  	border-collapse: collapse;
+  }
+
+  th, td{
+  	border: 1px solid black;
+  	border-collapse: collapse;
+  	padding: 5px;
+  	text-align: left;
+  }
+
+  table tr:nth-child(odd) { background-color: #8e8; }
+
+  table tr:nth-child(even){ background-color: #fff; }
+
+</style>
   </head>
   <body>
     <table id="t01">
-      {% for column in row %}
       <tr> <td>Country</td> <td>{{column.country|safe}}</td> </tr>
       <tr> <td>Location</td> <td>{{column.nearest_places|safe}}</td> </tr>
       <tr> <td>date</td> <td>{{column.date|safe}}</td></tr>
@@ -15,7 +34,6 @@
       <tr> <td>Landslide size</td> <td>{{column.landslide_size|safe}}</td></tr>
       <tr> <td>Latitude</td> <td>{{column.latitude|safe}}</td></tr>
       <tr> <td>Longitude</td> <td>{{column.longitude|safe}}</td></tr>
-      {% endfor %}
     </table>
   </body>
   </html>
