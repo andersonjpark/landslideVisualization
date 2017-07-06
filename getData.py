@@ -17,10 +17,8 @@ def getData( bounding_box, limit=600 ):
                 FROM LANDSLIDES WHERE
                 latitude < {} and latitude > {} and
                 longitude < {} and longitude > {} order by landslide_size DESC LIMIT {}"""
-    print bounding_box
     query = query.format(bounding_box[1][0], bounding_box[0][0],
                          bounding_box[1][1], bounding_box[0][1], limit)
-    print query
     N = 0
     for data in cursor.execute(query):
         try:
@@ -36,5 +34,4 @@ def getData( bounding_box, limit=600 ):
         except Exception as e:
             print "ERROR:" + str(e)
             pass
-    print "N = ", N
     return landslide_map

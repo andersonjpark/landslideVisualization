@@ -7,10 +7,6 @@ import geocoder
 
 from getData import getData
 
-#store_data = pd.read_csv("global_landslides.csv")
-#landslide_map = folium.Map(tiles="Stamen Terrain", zoom_start = 6)
-#store_data = store_data[:100]
-
 app = Flask(__name__)
 currentMap = [None]
 
@@ -24,10 +20,6 @@ def map():
 def relocate(name):
 	g = geocoder.google(name)
 	x,y = g.lat,g.lng
-        print name, g, g.status
-        # geocoder comes with a built-in bounding box
-        # this is a better solution than always giving a +/ 10 degrees
-        # The BB is a little narrow, so we
         if g.status == 'OK':
           landslide_map = getData( [g.southwest, g.northeast] )
           currentMap[0] = landslide_map
