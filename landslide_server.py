@@ -27,7 +27,7 @@ def relocate(name):
                                  view_map = landslide_map,
                                  location = name)
         else:
-          print "Going to the default"
+          print "Going to the Default"
           return render_template("layout.html",
                                  view_map = currentMap[0],
                                  location = 'Not found',
