@@ -6,6 +6,9 @@ Makes a map showing all the landslides cases. Pressing the circle gives informat
 
 Source: https://data.nasa.gov/dataset/Global-Landslide-Catalog-Export/dd9e-wu2v/data
 
+### Screenshot
+
+![alt tag](https://github.com/jspark971/landslideVisualization/blob/master/VisualizationEx.png)
 
 ## What should be done
 
@@ -18,5 +21,3 @@ for relocating the map [DONE]
 6. Randomly choosing 100 landslides for the origin html using pd.samples()
 7. Changing folium into JS for using the popUp.html to increase the speed.
 8. Deploying the Flask app on Heroku
-
-![alt tag](https://github.com/jspark971/landslideVisualization/blob/master/VisualizationEx.png)
