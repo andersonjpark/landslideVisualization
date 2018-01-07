@@ -18,20 +18,20 @@ def map():
 
 @app.route("/location/<name>")
 def relocate(name):
-	g = geocoder.google(name)
-	x,y = g.lat,g.lng
-        if g.status == 'OK':
-          landslide_map = getData( [g.southwest, g.northeast] )
-          currentMap[0] = landslide_map
-          return render_template("layout.html",
-                                 view_map = landslide_map,
-                                 location = name)
-        else:
-          print "Going to the Default"
-          return render_template("layout.html",
-                                 view_map = currentMap[0],
-                                 location = 'Not found',
-                                 error    = "Could not locate {}".format(name))
+    g = geocoder.google(name)
+    x,y = g.lat,g.lng
+    if g.status == 'OK':
+      landslide_map = getData( [g.southwest, g.northeast] )
+      currentMap[0] = landslide_map
+      return render_template("layout.html",
+                              view_map = landslide_map,
+                              location = name)
+    else:
+      print("Going to the Default")
+      return render_template("layout.html",
+                              view_map = currentMap[0],
+                              location = 'Not found',
+                              error    = "Could not locate {}".format(name))
 
 @app.route("/<name>/<location>")
 def sayhiatplace(name, location):

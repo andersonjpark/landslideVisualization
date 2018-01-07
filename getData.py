@@ -32,6 +32,6 @@ def getData( bounding_box, limit=600 ):
                 popup  = popupTable
             ).add_to(landslide_map)
         except Exception as e:
-            print "ERROR:" + str(e)
+            print("ERROR:" + str(e))
             pass
     return landslide_map
