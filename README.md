@@ -8,7 +8,10 @@ Source: https://data.nasa.gov/dataset/Global-Landslide-Catalog-Export/dd9e-wu2v/
 
 ### Screenshot
 
-![alt tag](https://github.com/jspark971/landslideVisualization/blob/master/VisualizationEx.png)
+![alt tag](https://github.com/jspark971/landslideVisualization/blob/master/visualization_example.png)
+
+
+![alt tag](https://github.com/jspark971/landslideVisualization/blob/master/popUp_example.png)
 
 ## What should be done
 
