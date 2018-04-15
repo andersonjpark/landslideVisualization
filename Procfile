@@ -1,1 +1,1 @@
-web: python flaskserver.py
+web: gunicorn landslide_server:app
